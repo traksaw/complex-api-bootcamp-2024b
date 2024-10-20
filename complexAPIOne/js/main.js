@@ -6,7 +6,7 @@ function findMyCeleb() {
     const options = {
         method: 'GET',
         headers: {
-            'x-Api-key': 'EXyOyn6Z1ROLqILk1NbYYA==3uQH1TRzZMveYzWa',
+            'x-Api-key': 'API_KEY',
         },
         contentType: 'application/json',
     };
@@ -32,7 +32,7 @@ function findMyCeleb() {
                 listItem.appendChild(imgItem)
                 textItem.textContent = celeb.name
                 const flagCode = celeb.nationality
-                console.log(`Celeb = ${celeb.name} : Nationality = ${celeb.nationality}`)
+                // console.log(`Celeb = ${celeb.name} : Nationality = ${celeb.nationality}`)
 
                 if (!flagCode) {
                     //deal with unknown nationality
