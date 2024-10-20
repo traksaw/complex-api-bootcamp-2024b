@@ -1,4 +1,6 @@
 document.querySelector('#factBtn').addEventListener('click', findMyCeleb)
+document.querySelector('#factBtn').addEventListener('click', resetInput)
+
 
 function findMyCeleb() {
     const name = document.querySelector('#nameIpt').value;
@@ -6,7 +8,7 @@ function findMyCeleb() {
     const options = {
         method: 'GET',
         headers: {
-            'x-Api-key': 'API_KEY',
+            'x-Api-key': apiKey,
         },
         contentType: 'application/json',
     };
@@ -47,7 +49,15 @@ function findMyCeleb() {
                         const flagImg = data[0].flags.png
                         const flagItem = data[0].flags
                         imgItem.src = flagImg
-                        
+                        const flagName = document.querySelector('#flagName')
+                        flagName.textContent = `${flagCode}`
+
+                        const input = document.querySelector('#nameIpt')
+
+                        // input.addEventListener('focus',resetInput)
+                        // function resetInput() {
+                        //     input.value = '';
+                        // } //takes input value off when clicked on it
 
                     }) //refactor point
                 }
@@ -63,4 +73,9 @@ function findMyCeleb() {
         .catch(err => {
             console.log(`error ${err}`)
         })
+}
+function resetInput() {
+const input = document.querySelector('#nameIpt')
+input.value = ''
+
 }

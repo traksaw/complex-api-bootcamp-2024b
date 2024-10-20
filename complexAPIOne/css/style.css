@@ -10,9 +10,65 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
+html {
+  font-family: "Bangers", system-ui;
+  background-color: #F06449;
+}
 
+.introSection,
+li,
+p {
+  text-align: center;
+}
 
+.introSection > h1 {
+  font-size: 78px;
+  color: #5BC3EB;
+  margin: 0 0 2.5% 0;
+}
+.introSection > p,
+#flagName {
+  color: #36382E;
+  margin-bottom: 2.5%;
+  font-size: 28px;
+}
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  color: #DADAD9;
+  font-size: 38px;
+}
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+@media screen and (max-width: 1024px) {
+  li {
+    font-size: 38px;
+  }
+
+}
+@media screen and (min-width: 375px) {
+  .introSection > h1 {
+    font-size: 7em;
+  }
+  .introSection > p,
+  #flagName {
+    color: #36382E;
+    margin-bottom: 2.5%;
+    font-size: 48px;
+  }
+  .introSection > input {
+    color: #36382E;
+    margin-bottom: 2.5%;
+    font-size: 48px;
+  }
+  li {
+    list-style: none;
+    color: #DADAD9;
+    font-size: 58px;
+  }
+}
