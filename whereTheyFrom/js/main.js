@@ -1,3 +1,4 @@
+import { apiKey3 } from "./apiKeys.js";
 document.querySelector('#factBtn').addEventListener('click', findMyCeleb)
 document.querySelector('#factBtn').addEventListener('click', resetInput)
 
@@ -8,7 +9,7 @@ function findMyCeleb() {
     const options = {
         method: 'GET',
         headers: {
-            'x-Api-key': apiKey,
+            'x-Api-key': apiKey3,
         },
         contentType: 'application/json',
     };
@@ -16,7 +17,7 @@ function findMyCeleb() {
     fetch(urlUno, options)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            // console.log(data)
             const parentItem = document.querySelector('#imgSection')
             //removes all existing children from the list element
             while (parentItem.firstChild) {
@@ -45,7 +46,7 @@ function findMyCeleb() {
                     fetch(urlDos)
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
+                        // console.log(data)
                         const flagImg = data[0].flags.png
                         const flagItem = data[0].flags
                         imgItem.src = flagImg
